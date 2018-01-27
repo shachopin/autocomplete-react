@@ -6,7 +6,7 @@ import sortBy from 'sort-by'
 class App extends Component {
   componentWillMount() {
     const allOptions = productsJSON.products
-      .sortBy("name")
+      .sort(sortBy("name"))
       .map(function(product) {
         return product.name
       });
@@ -32,16 +32,16 @@ class App extends Component {
   }
 
   selectOption = (selectedOption) => {
-    this.setState({selectedOption, searchedOptions:[]}) 
+    this.setState({selectedOption, searchedOptions: []}) 
   }
   
   clearSelectedOption = () => {
-    this.setState({selectedOption: '', searchedOptions:[]}) 
+    this.setState({selectedOption: '', searchedOptions: []}) 
   }
   
   handleSubmission = (e) => {
     e.preventDefault();
-    this.setState({selectedOption: ''})
+    this.setState({selectedOption: '', searchedOptions: []})
     alert(`There is no server processing your request, but thank you for choosing ${this.state.selectedOption}`)
   }
 
