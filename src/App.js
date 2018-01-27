@@ -5,15 +5,15 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <form>
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3 form-group">
+            <label for="name_input">Search</label>
+            <input type="text" class="form-control" id="name_input" placeholder="Type a product name" list="data_list" required /> 
+            
+          </div>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </form>   
     );
   }
 }
