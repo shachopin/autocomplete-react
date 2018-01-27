@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import DataList from './DataList'
-//import Form from './Form'
 import productsJSON from '../products.json'
 
-class App extends Component {  
+class App extends Component {
   componentWillMount() {
     const allOptions = productsJSON.products.map(function(product) {
       return product.name
@@ -35,22 +34,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid custom-div">
         <form>
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              
+              <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
       
       
 
 
             </div>
           </div>
-        </form>  
-        <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
+        </form>   
     </div> 
     )
   }
