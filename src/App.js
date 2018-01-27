@@ -5,10 +5,15 @@ import productsJSON from '../products.json'
 class App extends Component {
   componentWillMount() {
     console.log(productsJSON) 
+    const names = productsJSON.products.map(function(product) {
+      return product.name
+    });
+    this.setState({names})
   }
   
   state = {
-    text: "" 
+    text: "",
+    names: []
   }
 
   handleChange = (e) => {
@@ -25,7 +30,7 @@ class App extends Component {
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList/>
+              <DataList names={this.state.statenames}/>
       
       
 
