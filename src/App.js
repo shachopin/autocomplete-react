@@ -32,24 +32,32 @@ class App extends Component {
     this.setState({selectedOption, searchedOptions:[]}) 
   }
   
-  clear
+  clearSelectedOption = () => {
+    this.setState({selectedOption: '', searchedOptions:[]}) 
+  }
+  
+  handleSubmission = (e) => {
+    e.preventDefault();
+    this.setState({selectedOption: ''})
+    alert(`There is no server processing your request, but thank you for choosing ${this.state.selectedOption}`)
+  }
 
   render() {
     return (
       <div className="container-fluid">
-        <form>
-          <br/>
-          <br/>
-          <br/>
+        <br/>
+        <br/>
+        <br/>
+        <form onSubmit={}> 
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
             </div>
-            <div class="text-center">
-              <button id="search_button" className="btn btn-success">Search</button>
+            <div>
+              <button id="submit_button" className="btn btn-success">Submit</button>
               &nbsp;
-              <button id="search_button" className="btn btn-warning" onClick={}>Clear</button>
+              <button id="search_button" className="btn btn-warning" onClick={this.clearSelectedOption}>Clear</button>
             </div>
             
           </div>
