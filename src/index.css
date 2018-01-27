@@ -14,10 +14,8 @@ li:hover {
   background: yellow;
 }
 
-.custom-div { 
+body{
  display: flex;
- flex: 1;
- flex-direction: column; 
- justify-content: center
-
+  flex-direction: column;
+  justify-content: center; 
 }

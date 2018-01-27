@@ -38,14 +38,11 @@ class App extends Component {
         <form>
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
-              <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
-              
               <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
-      
-      
-
-
+            </div>
+            <div class="text-center">
+              <button id="search_button" className="btn btn-success">Search</button>
             </div>
           </div>
         </form>   
