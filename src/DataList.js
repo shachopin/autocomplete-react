@@ -1,12 +1,10 @@
-import React from "react"
+import React from 'react'
+import DataListItem from './DataListItem'
 
 const DataList = () => (
   <ul className="list-group">
-    <li className="list-group-item">AAA</li>
-    <li className="list-group-item">BBB</li>
-    
+    <DataListItem />
   </ul>
-  
 )
 
 export default DataList
