@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
+  state = {
+    test: "" 
+  }
+
+  handleChange = () => {
+    
+  }
   render() {
     return (
-      <form>
-        <div class="row">
-          <div class="col-xs-6 col-xs-offset-3 form-group">
-            <label for="name_input">Search</label>
-            <input type="text" class="form-control" id="name_input" placeholder="Type a product name" list="data_list" required /> 
-            
+      <div className="container-fluid">
+        <form>
+          <div className="row">
+            <div className="col-xs-6 col-xs-offset-3 form-group">
+              <label htmlFor="name_input">Search</label>
+              <input type="text" className="form-control"  onChange={} placeholder="Type a product name"  />          
+            </div>
           </div>
-        </div>
-      </form>   
+        </form>   
+    </div> 
     );
   }
 }
