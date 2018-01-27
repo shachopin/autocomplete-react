@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import DataList from './DataList'
 import productsJSON from '../products.json'
+import sortBy from 'sort-by'
 
 class App extends Component {
   componentWillMount() {
-    const allOptions = productsJSON.products.map(function(product) {
-      return product.name
-    });
+    const allOptions = productsJSON.products
+      .sortBy("name")
+      .map(function(product) {
+        return product.name
+      });
     this.setState({allOptions})
   }
   
