@@ -12,7 +12,7 @@ class App extends Component {
     const allOptions = productsJSON.products.map(function(product) {
       return product.name
     });
-    this.setState({allOptions, searchedOptions: allOptions})
+    this.setState({allOptions})
   }
   
   state = {
@@ -33,6 +33,12 @@ class App extends Component {
     this.setState({searchedOptions: newOptions})
   }
 
+  pickOption = (selectedOption) => {
+   this.setState({text: selectedOption}) 
+  }
+    
+  
+
   render() {
     return (
       <div className="container-fluid">
@@ -42,7 +48,7 @@ class App extends Component {
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList options={this.state.searchedOptions}/>
+              <DataList options={this.state.searchedOptions} pickOption={pickOption}/>
       
       
 
