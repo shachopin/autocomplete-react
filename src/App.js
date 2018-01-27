@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   pickOption = (selectedOption) => {
-   this.setState({text: selectedOption}) 
+    this.setState({text: selectedOption, searchedOptions:[]}) 
   }
 
   render() {
