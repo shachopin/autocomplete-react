@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import DataList from './DataList'
+//import Form from './Form'
 import productsJSON from '../products.json'
 
-class App extends Component {
-  componentWillUpdate() {
-    console.log("I will update now") 
-  }
-  
+class App extends Component {  
   componentWillMount() {
-    console.log(productsJSON) 
     const allOptions = productsJSON.products.map(function(product) {
       return product.name
     });
@@ -22,7 +18,7 @@ class App extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({text: e.target.value})
+    this.setState({selectedOption: e.target.value})
     this.searchOption(e.target.value)
   }
   
@@ -46,14 +42,15 @@ class App extends Component {
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
+              
       
       
 
 
             </div>
           </div>
-        </form>   
+        </form>  
+        <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
     </div> 
     )
   }
