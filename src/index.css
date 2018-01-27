@@ -13,3 +13,11 @@ body {
 li:hover {
   background: yellow;
 }
+
+#root {
+  margin-top:10%
+}
+
+#clear_button {
+  margin-left:7px
+}

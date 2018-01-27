@@ -48,9 +48,6 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <br/>
-        <br/>
-        <br/>
         <form onSubmit={this.handleSubmission}> 
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
@@ -60,7 +57,7 @@ class App extends Component {
             <div>
               <button id="submit_button" className="btn btn-success">Submit</button>
               &nbsp;
-              <button type="button" id="search_button" className="btn btn-warning" onClick={this.clearSelectedOption}>Clear</button>
+              <button type="button" id="clear_button" className="btn btn-warning" onClick={this.clearSelectedOption}>Clear</button>
             </div>    
           </div>
         </form>   
