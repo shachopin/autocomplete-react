@@ -48,7 +48,7 @@ class App extends Component {
         <br/>
         <br/>
         <br/>
-        <form onSubmit={}> 
+        <form onSubmit={this.handleSubmission}> 
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
@@ -57,12 +57,11 @@ class App extends Component {
             <div>
               <button id="submit_button" className="btn btn-success">Submit</button>
               &nbsp;
-              <button id="search_button" className="btn btn-warning" onClick={this.clearSelectedOption}>Clear</button>
-            </div>
-            
+              <button type="button" id="search_button" className="btn btn-warning" onClick={this.clearSelectedOption}>Clear</button>
+            </div>    
           </div>
         </form>   
-    </div> 
+      </div> 
     )
   }
 }
