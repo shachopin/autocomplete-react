@@ -31,11 +31,16 @@ class App extends Component {
   selectOption = (selectedOption) => {
     this.setState({selectedOption, searchedOptions:[]}) 
   }
+  
+  clear
 
   render() {
     return (
-      <div className="container-fluid custom-div">
+      <div className="container-fluid">
         <form>
+          <br/>
+          <br/>
+          <br/>
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
@@ -43,7 +48,10 @@ class App extends Component {
             </div>
             <div class="text-center">
               <button id="search_button" className="btn btn-success">Search</button>
+              &nbsp;
+              <button id="search_button" className="btn btn-warning" onClick={}>Clear</button>
             </div>
+            
           </div>
         </form>   
     </div> 
