@@ -3,8 +3,8 @@ import DataListItem from './DataListItem'
 
 const DataList = (props) => (
   <ul className="list-group">
-    {/*<DataListItem />*/}
-    {props.names.map((name) => name)}
+    {/*props.options.map((option) => <DataListItem value={option} key={option} />)*/}
+    {props.options.map((option) => option) />)}
   </ul>
 )
 

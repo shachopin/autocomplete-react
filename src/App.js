@@ -9,27 +9,28 @@ class App extends Component {
   
   componentWillMount() {
     console.log(productsJSON) 
-    const names = productsJSON.products.map(function(product) {
+    const allOptions = productsJSON.products.map(function(product) {
       return product.name
     });
-    this.setState({names: names, options: names})
+    this.setState({allOptions, searchedOptions: allOptions})
   }
   
   state = {
     text: "",
-    names: [],
-    options: []
+    allOptions: [],
+    searchedOptions: []
   }
 
   handleChange = (e) => {
     this.setState({text: e.target.value})
-    this.searchName(e.target.value)
+    this.searchOption(e.target.value)
   }
   
-  searchName(inputName) {
-    var newOptions = this.state.names.filter(function(name) {
-      return name.includes(inputName);
+  searchOption(inputOption) {
+    var newOptions = this.state.allOptions.filter(function(option) {
+      return option.includes(inputOption);
     });
+    this.setState({searchedOptions: newOptions})
   }
 
   render() {
@@ -41,7 +42,7 @@ class App extends Component {
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList names={this.state.options}/>
+              <DataList options={this.state.searchedOptions}/>
       
       
 
