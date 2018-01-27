@@ -23,9 +23,13 @@ class App extends Component {
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <label htmlFor="name_input">Search</label>
-              <input type="text" value="thisclassName="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
+              <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
               <DataList/>
+      
+      
+
+
             </div>
           </div>
         </form>   
