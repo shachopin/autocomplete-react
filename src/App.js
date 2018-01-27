@@ -16,7 +16,7 @@ class App extends Component {
   }
   
   state = {
-    text: "",
+    selectedOption: "",
     allOptions: [],
     searchedOptions: []
   }
@@ -33,8 +33,8 @@ class App extends Component {
     this.setState({searchedOptions: newOptions})
   }
 
-  pickOption = (selectedOption) => {
-    this.setState({text: selectedOption, searchedOptions:[]}) 
+  selectOption = (selectedOption) => {
+    this.setState({selectedOption, searchedOptions:[]}) 
   }
 
   render() {
@@ -44,9 +44,9 @@ class App extends Component {
           <div className="row">
             <div className="col-xs-6 col-xs-offset-3 form-group">
               <label htmlFor="name_input">Search</label>
-              <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
+              <input type="text" value={this.state.selectedOption} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList options={this.state.searchedOptions} pickOption={this.pickOption}/>
+              <DataList options={this.state.searchedOptions} selectOption={this.selectOption}/>
       
       
 
