@@ -7,7 +7,7 @@ class DataListItem extends Component {
   
   render() {
     return (
-      <li className="list-group-item" onClick={this.handleClick}>{this.props.value}</li>
+      <li className="list-group-item custom-list-item" onClick={this.handleClick}>{this.props.value}</li>
     )
   }
 }
