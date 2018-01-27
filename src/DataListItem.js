@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
 
 class DataListItem extends Component {
-  handleClick 
+  handleClick = () => {
+    this.props.pickOption(this.props.value)
+  }
+  
   render() {
     return (
-      <li className="list-group-item" onClick={() => pickOption(this.props.value)}>{this.props.value}</li>
+      <li className="list-group-item" onClick={this.handleClick}>{this.props.value}</li>
     )
   }
 }

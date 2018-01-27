@@ -36,8 +36,6 @@ class App extends Component {
   pickOption = (selectedOption) => {
    this.setState({text: selectedOption}) 
   }
-    
-  
 
   render() {
     return (
@@ -48,7 +46,7 @@ class App extends Component {
               <label htmlFor="name_input">Search</label>
               <input type="text" value={this.state.text} className="form-control" onChange={this.handleChange} placeholder="Type a product name"  />   
               
-              <DataList options={this.state.searchedOptions} pickOption={pickOption}/>
+              <DataList options={this.state.searchedOptions} pickOption={this.pickOption}/>
       
       
 
